@@ -7,7 +7,8 @@ import { DisplayCardComponent } from './display-card/display-card.component';
 import { SelectionComponent } from './selection/selection.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReportService } from './report.service';
-
+import { NgMaterialMultilevelMenuModule } from 'ng-material-multilevel-menu';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,10 @@ import { ReportService } from './report.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule
+    AppRoutingModule,
+    HttpClientModule,
+    NgMaterialMultilevelMenuModule,
+    FormsModule
   ],
   providers: [ReportService],
   bootstrap: [AppComponent]

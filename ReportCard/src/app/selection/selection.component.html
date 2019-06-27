@@ -4,35 +4,42 @@
         <section>
             
             <form method="post" action="#">
+                   
+                      
                 <div class="row uniform 50%">
                     <div class="6u 12u$(xsmall)">
                         <div class="select-wrapper">
-                            <select name="demo-category" id="demo-category">
-                                <option value="">- Year & Batch -</option>
-                                <option value="1">Manufacturing</option>
-                                <option value="1">Shipping</option>
-                                <option value="1">Administration</option>
-                                <option value="1">Human Resources</option>
+                            <select name="demo-category" id="demo-category" (change)="selectOption($event.target.value)" [(ngModel)]="selectedyear">
+                                <option>{{selectedyear}}</option>
+                                <option value="2019">AU-2019</option>
+                                <option value="2018">AU-2018</option>
+                               
                             </select>
                         </div>
-                        <!-- <input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" /> -->
                     </div>
                     <div class="6u$ 12u$(xsmall)">
                             <div class="select-wrapper">
-                                    <select name="demo-category" id="demo-category">
-                                        <option value="">- Test -</option>
-                                        <option value="1">Manufacturing</option>
-                                        <option value="1">Shipping</option>
-                                        <option value="1">Administration</option>
-                                        <option value="1">Human Resources</option>
+                                    <select name="demo-category" id="demo-category" (change)="selectOption($event.target.value)" [(ngModel)]="selectedbatch">
+                                        <option>{{selectedbatch}}</option>
+                                        <option *ngFor="let t of batchlist"  value={{t}} >{{t}}</option>
+                                       
                                     </select>
                                 </div>
-                        <!-- <input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" /> -->
-                    </div>
+                       </div>
+
+                       <div class="6u$ 12u$(xsmall)">
+                            <div class="select-wrapper">
+                                    <select name="demo-category" id="demo-category"(change)="selectOption($event.target.value)" [(ngModel)]="selectedtest">
+                                        <option>{{selectedtest}}</option>
+                                        <option *ngFor="let t of testlist">{{t}}</option>
+                                       
+                                    </select>
+                                </div>
+                       </div>
                     
                     
                     
-                </div>
+                </div> 
             </form>
         </section>
         
